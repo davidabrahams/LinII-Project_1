@@ -1,4 +1,4 @@
-class Move(object):
+class Pick(object):
 
     # id is player who was drafted
     def __init__(self, identifier):
