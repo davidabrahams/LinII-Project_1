@@ -4,6 +4,7 @@ from player import Player
 class DraftState(object):
 
     round_length = 10
+    num_rounds = 16
 
     def __init__(self, qbs, rbs, wrs, tes, dsts, ks, round_number=1,
                  pick_number=1, taken=[]):
@@ -70,3 +71,25 @@ class DraftState(object):
                           avail_dict['dsts'], avail_dict['ks'],
                           next_round, next_pick, taken)
 
+
+    def is_draft_over(self):
+        return len(self.taken) >= round_number * round_length
+
+
+    # def max(self, game_state):
+    #     picks = game_state.get_available_picks()
+
+    #     best_pick = picks[0]
+    #     best_score = float('-inf')
+
+    def get_team(owner):
+        players = []
+        for pick in owner.picks:
+            if pick <= len(taken):
+                players.append(taken[pick - 1])
+
+
+
+#TODO
+# Evaluate Team function (Heuristic)
+# Max function --> based on evaluate function 
