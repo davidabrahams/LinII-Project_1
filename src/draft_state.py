@@ -5,7 +5,8 @@ class DraftState(object):
 
     round_length = 10
 
-    def __init__(self, qbs, rbs, wrs, tes, dsts, ks, round_number=1, pick_number=1, taken=[]):
+    def __init__(self, qbs, rbs, wrs, tes, dsts, ks, round_number=1,
+                 pick_number=1, taken=[]):
         # taken is a list of rounds, where each round is a list of the players
         # taken in that rounds
         self.round_number = round_number
@@ -14,9 +15,12 @@ class DraftState(object):
         # place available players in a dictionary
         self.available = {'qbs': qbs, 'rbs': rbs, 'wrs': wrs, 'tes': tes,
                           'dsts': dsts, 'ks': ks}
-        
+
     def __str__(self):
-        return "Round #" + str(self.round_number) + ", Pick #" + str(self.pick_number) + ", Players taken: " + str([t.identifier for t in self.taken])
+        return "Round #" + str(self.round_number) + ", Pick #" +\
+               str(self.pick_number) + ", Players taken: " + str([t.identifier
+                                                                  for t in
+                                                                  self.taken])
 
     def get_available_picks(self):
         """
@@ -61,5 +65,8 @@ class DraftState(object):
         next_pick = self.pick_number + 1
         next_round = (self.pick_number - 1) / 10 + 1
 
-        return DraftState(avail_dict['qbs'], avail_dict['rbs'], avail_dict['wrs'], avail_dict['tes'], avail_dict['dsts'], avail_dict['ks'], next_round, next_pick, taken)
+        return DraftState(avail_dict['qbs'], avail_dict['rbs'],
+                          avail_dict['wrs'], avail_dict['tes'],
+                          avail_dict['dsts'], avail_dict['ks'],
+                          next_round, next_pick, taken)
 
