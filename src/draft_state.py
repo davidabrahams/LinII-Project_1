@@ -1,5 +1,6 @@
 from pick import Pick
 from player import Player
+from owner import Owner
 
 class DraftState(object):
 
@@ -7,12 +8,18 @@ class DraftState(object):
     num_rounds = 16
 
     def __init__(self, qbs, rbs, wrs, tes, dsts, ks, round_number=1,
-                 pick_number=1, taken=[]):
+                 pick_number=1, taken=[], owners=[]):
         # taken is a list of rounds, where each round is a list of the players
         # taken in that rounds
         self.round_number = round_number
         self.pick_number = pick_number
         self.taken = taken
+
+        self.owners = owners
+         # if no owners inputed, initalize the array of owners
+        if self.owners is []:
+            self.owners = self.init_owners()
+
         # place available players in a dictionary
         self.available = {'qbs': qbs, 'rbs': rbs, 'wrs': wrs, 'tes': tes,
                           'dsts': dsts, 'ks': ks}
@@ -22,6 +29,29 @@ class DraftState(object):
                str(self.pick_number) + ", Players taken: " + str([t.identifier
                                                                   for t in
                                                                   self.taken])
+
+    def init_owners(self):
+        """
+        >>> state = DraftState([], [], [], [], [], [])
+        >>> owners = state.init_owners()
+        >>> for o in owners:
+        ...     print o
+        """
+        owners = []
+        # i is the owner number
+        for i in range(1, self.round_length + 1):
+            picks = []
+            # j is the round number
+            for j in range(self.num_rounds):
+                if j % 2 == 0:
+                    pick = i + self.round_length * j
+                else:
+                    pick = self.round_length - i + 1 + self.round_length * j
+                picks.append(pick)
+
+            owner = Owner(picks)
+            owners.append(owner)
+        return owners
 
     def get_available_picks(self):
         """
@@ -73,7 +103,7 @@ class DraftState(object):
 
 
     def is_draft_over(self):
-        return len(self.taken) >= round_number * round_length
+        return len(self.taken) >= self.round_number * DraftState.round_length
 
 
     # def max(self, game_state):
@@ -82,14 +112,21 @@ class DraftState(object):
     #     best_pick = picks[0]
     #     best_score = float('-inf')
 
-    def get_team(owner):
+
+    def eval_state():
+        pass
+
+    def get_team(self, owner):
+        """This function returns the players on an owner's team at the current
+        draf state.
+        """
         players = []
         for pick in owner.picks:
-            if pick <= len(taken):
-                players.append(taken[pick - 1])
+            if pick <= len(self.taken):
+                players.append(self.taken[pick - 1])
 
 
 
 #TODO
 # Evaluate Team function (Heuristic)
-# Max function --> based on evaluate function 
+# Max function --> based on evaluate function
