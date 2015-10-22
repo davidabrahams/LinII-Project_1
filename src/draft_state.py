@@ -7,7 +7,7 @@ class DraftState(object):
     round_length = 10
     num_rounds = 16
 
-    def __init__(self, qbs, rbs, wrs, tes, dsts, ks, round_number=1,
+    def __init__(self, available, round_number=1,
                  pick_number=1, taken=[], owners=[]):
         # taken is a list of rounds, where each round is a list of the players
         # taken in that rounds
@@ -21,8 +21,9 @@ class DraftState(object):
             self.owners = self.init_owners()
 
         # place available players in a dictionary
-        self.available = {'qbs': qbs, 'rbs': rbs, 'wrs': wrs, 'tes': tes,
-                          'dsts': dsts, 'ks': ks}
+        self.available = available
+        # self.available = avail{'qbs': qbs, 'rbs': rbs, 'wrs': wrs, 'tes': tes,
+        #                   'dsts': dsts, 'ks': ks}
 
     def __str__(self):
         return "Round #" + str(self.round_number) + ", Pick #" + \
@@ -32,10 +33,20 @@ class DraftState(object):
 
     def init_owners(self):
         """
-        >>> state = DraftState([], [], [], [], [], [])
+        >>> state = DraftState({})
         >>> owners = state.init_owners()
         >>> for o in owners:
         ...     print o
+        Owner with picks: [1, 20, 21, 40, 41, 60, 61, 80, 81, 100, 101, 120, 121, 140, 141, 160]
+        Owner with picks: [2, 19, 22, 39, 42, 59, 62, 79, 82, 99, 102, 119, 122, 139, 142, 159]
+        Owner with picks: [3, 18, 23, 38, 43, 58, 63, 78, 83, 98, 103, 118, 123, 138, 143, 158]
+        Owner with picks: [4, 17, 24, 37, 44, 57, 64, 77, 84, 97, 104, 117, 124, 137, 144, 157]
+        Owner with picks: [5, 16, 25, 36, 45, 56, 65, 76, 85, 96, 105, 116, 125, 136, 145, 156]
+        Owner with picks: [6, 15, 26, 35, 46, 55, 66, 75, 86, 95, 106, 115, 126, 135, 146, 155]
+        Owner with picks: [7, 14, 27, 34, 47, 54, 67, 74, 87, 94, 107, 114, 127, 134, 147, 154]
+        Owner with picks: [8, 13, 28, 33, 48, 53, 68, 73, 88, 93, 108, 113, 128, 133, 148, 153]
+        Owner with picks: [9, 12, 29, 32, 49, 52, 69, 72, 89, 92, 109, 112, 129, 132, 149, 152]
+        Owner with picks: [10, 11, 30, 31, 50, 51, 70, 71, 90, 91, 110, 111, 130, 131, 150, 151]
         """
         owners = []
         # i is the owner number
@@ -55,7 +66,7 @@ class DraftState(object):
 
     def get_available_picks(self):
         """
-        >>> state = DraftState([Player('qb', 100, 'qb1'), Player('qb', 90, 'qb2')], [Player('rb', 100, 'rb1')], [], [], [], [])
+        >>> state = DraftState({'qbs': [Player('qb', 100, 'qb1'), Player('qb', 90, 'qb2')], 'rbs': [Player('rb', 100, 'rb1')], 'wrs': [], 'tes': [], 'dsts': [], 'ks': []})
         >>> picks = state.get_available_picks()
         >>> for p in picks:
         ...     print p.identifier
@@ -72,7 +83,7 @@ class DraftState(object):
 
     def next_state(self, pick):
         """
-        >>> state = DraftState([Player('qb', 100, 'qb1'), Player('qb', 90, 'qb2')], [Player('rb', 100, 'rb1')], [], [], [], [])
+        >>> state = DraftState({'qbs': [Player('qb', 100, 'qb1'), Player('qb', 90, 'qb2')], 'rbs': [Player('rb', 100, 'rb1')], 'wrs': [], 'tes': [], 'dsts': [], 'ks': []})
         >>> pick = Pick('qb1')
         >>> next_state = state.next_state(pick)
         >>> print next_state
@@ -96,9 +107,7 @@ class DraftState(object):
         next_pick = self.pick_number + 1
         next_round = (self.pick_number - 1) / 10 + 1
 
-        return DraftState(avail_dict['qbs'], avail_dict['rbs'],
-                          avail_dict['wrs'], avail_dict['tes'],
-                          avail_dict['dsts'], avail_dict['ks'],
+        return DraftState(avail_dict,
                           next_round, next_pick, taken)
 
 

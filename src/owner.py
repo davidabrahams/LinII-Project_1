@@ -19,5 +19,5 @@ class Owner(object):
         if strategy == 'worst_dropoff':
             pass
         # Worst dropoff to guaranteed player
-        if strategy == 'worst_guaranteed'
-        pass
+        if strategy == 'worst_guaranteed':
+            pass
