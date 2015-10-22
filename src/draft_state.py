@@ -17,13 +17,11 @@ class DraftState(object):
 
         self.owners = owners
          # if no owners inputed, initalize the array of owners
-        if self.owners is []:
+        if len(self.owners) == 0:
             self.owners = self.init_owners()
 
         # place available players in a dictionary
         self.available = available
-        # self.available = avail{'qbs': qbs, 'rbs': rbs, 'wrs': wrs, 'tes': tes,
-        #                   'dsts': dsts, 'ks': ks}
 
     def __str__(self):
         return "Round #" + str(self.round_number) + ", Pick #" + \

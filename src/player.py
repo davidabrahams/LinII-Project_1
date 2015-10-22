@@ -5,3 +5,4 @@ class Player(object):
         self.position = position
         self.value = value
         self.identifier = identifier
+
