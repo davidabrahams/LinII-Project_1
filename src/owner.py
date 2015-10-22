@@ -1,6 +1,7 @@
 from pick import Pick
 from player import Player
 import draft_state
+import random
 
 class Owner(object):
 
@@ -14,18 +15,31 @@ class Owner(object):
     def make_decision(self, draft_state):
         """
 
-        >>> state = draft_state.DraftState({'qbs': [Player('qb', 110, 'qb1'), Player('qb', 90, 'qb2')], 'rbs': [Player('rb', 121, 'rb1')], 'wrs': [], 'tes': [], 'dsts': [], 'ks': []})
+        >>> state = draft_state.DraftState({'qbs': [Player('qb', 110, 'qb1'), Player('qb', 90, 'qb2')], 'rbs': [Player('rb', 121, 'rb1')], 'wrs': [Player('wr', 80, 'wr1')], 'tes': [Player('te', 90, 'te1')], 'dsts': [Player('dst', 40, 'dst1')], 'ks': [Player('k', 20, 'k1')]})
         >>> owner = state.owners[0]
         >>> owner.make_decision(state).identifier
         'rb1'
         >>> state.available['qbs'][0].value = 230
         >>> owner.make_decision(state).identifier
         'qb1'
+
         """
 
         player_to_pick = None
         my_team = draft_state.get_team(self) # currently unused
         available = draft_state.available
+
+
+        # Control function --> picks a random position and the best player at that position
+        if self.strategy == 'control':
+            choices = []
+            for position, players in available.iteritems():
+                if len(players) > 0:
+                    player = players[0]
+                    choices.append(player)
+
+            player_to_pick = random.choice(choices)
+
         if self.strategy == 'most_points':
             max_points = 0
             for position, players in available.iteritems():
