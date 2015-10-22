@@ -25,7 +25,7 @@ class DraftState(object):
                           'dsts': dsts, 'ks': ks}
 
     def __str__(self):
-        return "Round #" + str(self.round_number) + ", Pick #" +\
+        return "Round #" + str(self.round_number) + ", Pick #" + \
                str(self.pick_number) + ", Players taken: " + str([t.identifier
                                                                   for t in
                                                                   self.taken])
@@ -114,6 +114,10 @@ class DraftState(object):
 
 
     def eval_state():
+        # TODO:
+        # get the owner who just picked (I think)
+        # evaluate his team
+        # return it
         pass
 
     def get_team(self, owner):
