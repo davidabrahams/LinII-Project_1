@@ -15,7 +15,7 @@ class Owner(object):
     def make_decision(self, draft_state):
         """
 
-        >>> state = draft_state.DraftState({'qbs': [Player('qb', 110, 'qb1'), Player('qb', 90, 'qb2')], 'rbs': [Player('rb', 121, 'rb1')], 'wrs': [Player('wr', '80', 'wr1')], 'tes': [Player('te', 90, 'te1')], 'dsts': [Player('dst', 40, 'dst1')], 'ks': [Player('k', 20, 'k1')]})
+        >>> state = draft_state.DraftState({'qbs': [Player('qb', 110, 'qb1'), Player('qb', 90, 'qb2')], 'rbs': [Player('rb', 121, 'rb1')], 'wrs': [Player('wr', 80, 'wr1')], 'tes': [Player('te', 90, 'te1')], 'dsts': [Player('dst', 40, 'dst1')], 'ks': [Player('k', 20, 'k1')]})
         >>> owner = state.owners[0]
         >>> owner.make_decision(state).identifier
         'rb1'
@@ -38,7 +38,7 @@ class Owner(object):
                     player = players[0]
                     choices.append(player)
 
-            player_to_pick = choices[random.randint(0,len(choices) - 1)]
+            player_to_pick = random.choice(choices)
 
         if self.strategy == 'most_points':
             max_points = 0
