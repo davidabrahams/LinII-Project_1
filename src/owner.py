@@ -15,7 +15,7 @@ class Owner(object):
     def make_decision(self, draft_state):
         """
 
-        >>> state = draft_state.DraftState({'qbs': [Player('qb', 110, 'qb1'), Player('qb', 90, 'qb2')], 'rbs': [Player('rb', 121, 'rb1')], 'wrs': [Player('wr', 80, 'wr1')], 'tes': [Player('te', 90, 'te1')], 'dsts': [Player('dst', 40, 'dst1')], 'ks': [Player('k', 20, 'k1')]})
+        >>> state = draft_state.DraftState({'qbs': [Player('qb', 110, 'qb1'), Player('qb', 102, 'qb2')], 'rbs': [Player('rb', 121, 'rb1'), Player('rb', 12, 'rb1')], 'wrs': [Player('wr', 80, 'wr1')], 'tes': [Player('te', 90, 'te1')], 'dsts': [Player('dst', 40, 'dst1')], 'ks': [Player('k', 20, 'k1')]})
         >>> owner = state.owners[0]
         >>> owner.make_decision(state).identifier
         'rb1'
@@ -28,7 +28,6 @@ class Owner(object):
         player_to_pick = None
         my_team = draft_state.get_team(self) # currently unused
         available = draft_state.available
-
 
         # Control function --> picks a random position and the best player at that position
         if self.strategy == 'control':
@@ -49,8 +48,29 @@ class Owner(object):
                     if player_val > max_points:
                         max_points = player_val
                         player_to_pick = player
+
         # Worst dropoff to second best available
         if self.strategy == 'worst_dropoff':
+            difference = 0
+            for position, players in available.iteritems():
+                if len(players) == 1:
+                    player = players[0]
+                    player_val = player.value
+                    difference_local = player_val - 0
+                    if difference_local > difference:
+                        difference = difference_local
+                        player_to_pick = player
+                if len(players) > 1:
+                    player = players[0]
+                    player_val = player.value
+                    player_compare = players[1]
+                    player_val_compare = player_compare.value
+                    difference_local = player_val - player_val_compare
+                    if difference_local > difference:
+                        difference = difference_local
+                        player_to_pick = player
+
+
             pass
         # Worst dropoff to guaranteed player
         if self.strategy == 'worst_guaranteed':
