@@ -110,7 +110,7 @@ class DraftState(object):
 
 
     def is_draft_over(self):
-        return len(self.taken) >= self.round_number * DraftState.round_length
+        return len(self.taken) >= self.num_rounds * DraftState.round_length
 
 
     # def max(self, game_state):
@@ -127,6 +127,14 @@ class DraftState(object):
         # return it
         pass
 
+    def whos_pick(self):
+        """
+        this function returns the owner who's pick it currently is
+        """
+        for o in self.owners:
+            if self.pick_number in o.picks:
+                return o
+
     def get_team(self, owner):
         """This function returns the players on an owner's team at the current
         draf state.
@@ -135,6 +143,9 @@ class DraftState(object):
         for pick in owner.picks:
             if pick <= len(self.taken):
                 players.append(self.taken[pick - 1])
+
+def empty_state():
+    return {'qbs': [], 'rbs': [], 'wrs': [], 'tes': [], 'dsts': [], 'ks': []}
 
 
 
