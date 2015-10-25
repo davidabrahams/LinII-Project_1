@@ -1,4 +1,68 @@
 Player Name ,Position,Fantasy Points,Identifier
+Seahawks,DST,187,1
+Bills,DST,137,2
+Texans,DST,132,3
+Patriots,DST,126,4
+Rams,DST,124,5
+Dolphins,DST,117,6
+Eagles,DST,114,7
+Broncos,DST,113,8
+Jets,DST,111,9
+Ravens,DST,109,10
+Packers,DST,108,11
+Buccaneers,DST,105,12
+Panthers,DST,104,13
+Lions,DST,102,14
+Bengals,DST,102,15
+Cardinals,DST,101,16
+Colts,DST,101,17
+Giants,DST,101,18
+49ers,DST,100,19
+Vikings,DST,97,20
+Browns,DST,96,21
+Bears,DST,92,22
+Titans,DST,87,23
+Cowboys,DST,82,24
+Falcons,DST,81,25
+Chiefs,DST,80,26
+Jaguars,DST,79,27
+Steelers,DST,78,28
+Saints,DST,73,29
+Redskins,DST,67,30
+Chargers,DST,65,31
+Raiders,DST,47,32
+Stephen Gostkowski,K,139.9,1
+Mason Crosby,K,130.8,2
+Adam Vinatieri,K,129.6,3
+Cody Parkey,K,129.6,4
+Justin Tucker,K,128.3,5
+Steven Hauschka,K,127.3,6
+Dan Bailey,K,123.3,7
+Dan Carpenter,K,120.6,8
+Brandon McManus,K,120.5,9
+Chandler Catanzaro,K,119.3,10
+Matt Bryant,K,118.5,11
+Josh Scobee,K,118.5,12
+Graham Gano,K,115.1,13
+Nick Folk,K,114.4,14
+Randy Bullock,K,113.5,15
+Cairo Santos,K,112.9,16
+Andrew Franks,K,112.6,17
+Josh Brown,K,112.2,18
+Josh Lambo,K,111.5,19
+Phil Dawson,K,110.4,20
+Blair Walsh,K,110.1,21
+Greg Zuerlein,K,109.8,22
+Mike Nugent,K,108.6,23
+Matt Prater,K,107.3,24
+Travis Coons,K,106.5,25
+Zach Hocker,K,105.9,26
+Kai Forbath,K,104.3,27
+Sebastian Janikowski,K,100.7,28
+Robbie Gould,K,99.3,29
+Jason Myers,K,97.6,30
+Kyle Brindza,K,96.3,31
+Ryan Succop,K,93.5,32
 Andrew Luck,QB,329.6,1
 Aaron Rodgers,QB,325.2,2
 Russell Wilson,QB,303.2,3
@@ -180,6 +244,100 @@ Jordan Todman,RB,4.9,144
 Marcus Thigpen,RB,4.7,145
 Charcandrick West,RB,4.3,146
 Bernard Pierce,RB,2.6,147
+Rob Gronkowski,TE,171.2,1
+Jimmy Graham,TE,136.1,2
+Greg Olsen,TE,125.4,3
+Travis Kelce,TE,117.3,4
+Martellus Bennett,TE,114.2,5
+Jason Witten,TE,108.5,6
+Delanie Walker,TE,92.5,7
+Dwayne Allen,TE,92.1,8
+Jordan Cameron,TE,89.2,9
+Zach Ertz,TE,86.6,10
+Coby Fleener,TE,85.4,11
+Antonio Gates,TE,83.5,12
+Kyle Rudolph,TE,82.2,13
+Owen Daniels,TE,81.5,14
+Heath Miller,TE,81,15
+Julius Thomas,TE,79.4,16
+Jordan Reed,TE,79.4,17
+Tyler Eifert,TE,74.4,18
+Vernon Davis,TE,74.2,19
+Jared Cook,TE,74.1,20
+Charles Clay,TE,73.3,21
+Josh Hill,TE,69.1,22
+Larry Donnell,TE,68.6,23
+Austin Seferian-Jenkins,TE,68.1,24
+Richard Rodgers,TE,64.6,25
+Mychal Rivera,TE,62.8,26
+Eric Ebron,TE,61.9,27
+Ladarius Green,TE,59.5,28
+Benjamin Watson,TE,59,29
+Jeff Cumberland,TE,56.3,30
+Brent Celek,TE,51.7,31
+Maxx Williams,TE,49.9,32
+Jacob Tamme,TE,48.6,33
+Crockett Gillmore,TE,48.5,34
+Garrett Graham,TE,48.3,35
+Clive Walford,TE,47,36
+Lance Kendricks,TE,45.4,37
+Andrew Quarless,TE,43.7,38
+Scott Chandler,TE,42.9,39
+Gavin Escobar,TE,42,40
+Virgil Green,TE,41.7,41
+Marcedes Lewis,TE,37.4,42
+James O'Shaughnessy,TE,37.2,43
+Rob Housler,TE,36.3,44
+Luke Willson,TE,36.3,45
+Darren Fells,TE,36.1,46
+Rhett Ellison,TE,35.8,47
+Craig Stevens,TE,34.6,48
+Matt Spaeth,TE,33.9,49
+Dion Sims,TE,33.1,50
+Levine Toilolo,TE,33,51
+Ryan Hewitt,TE,31,52
+Gary Barnidge,TE,30.8,53
+Derek Carrier,TE,30.7,54
+Ed Dickson,TE,30,55
+Daniel Fells,TE,30,56
+Jermaine Gresham,TE,30,57
+Troy Niklas,TE,29.7,58
+Chris Gragg,TE,26.5,59
+Anthony Fasano,TE,25.7,60
+C.J. Fiedorowicz,TE,24.8,61
+James Casey,TE,24.3,62
+Brandon Myers,TE,23.1,63
+Kellen Davis,TE,22.6,64
+Brandon Pettigrew,TE,20.5,65
+Dennis Pitta,TE,19.5,66
+Jim Dray,TE,18.6,67
+Lee Smith,TE,18.6,68
+Trey Burton,TE,18.3,69
+Tyler Kroft,TE,18.1,70
+Demetrius Harris,TE,17.2,71
+Tim Wright,TE,17.1,72
+MyCole Pruitt,TE,16.1,73
+MarQueis Gray,TE,13.8,74
+Vance McDonald,TE,11.9,75
+Clay Harbor,TE,11.6,76
+Cameron Brate,TE,10.6,77
+Garrett Celek,TE,10.5,78
+Ryan Griffin,TE,10.4,79
+David Johnson,TE,10.4,80
+Nic Jacobs,TE,10.3,81
+Chase Ford,TE,9.8,82
+Cooper Helfet,TE,9.4,83
+Zach Miller,TE,8.2,84
+Michael Hoomanawanui,TE,8,85
+Phillip Supernaw,TE,7.2,86
+Brandon Williams,TE,5.7,87
+Luke Stocker,TE,5.6,88
+Jack Doyle,TE,5.6,89
+James Hanna,TE,5.3,90
+Cory Harkey,TE,5.2,91
+Jordan Thompson,TE,4.9,92
+Richard Gordon,TE,2.7,93
+Joseph Fauria,TE,0,94
 Antonio Brown,WR,212.6,1
 Demaryius Thomas,WR,210.2,2
 Dez Bryant,WR,203.4,3
@@ -343,161 +501,3 @@ Russell Shepard,WR,6.1,160
 Keshawn Martin,WR,5.8,161
 Seyi Ajirotutu,WR,5.4,162
 Frankie Hammond,WR,3.8,163
-Rob Gronkowski,TE,171.2,1
-Jimmy Graham,TE,136.1,2
-Greg Olsen,TE,125.4,3
-Travis Kelce,TE,117.3,4
-Martellus Bennett,TE,114.2,5
-Jason Witten,TE,108.5,6
-Delanie Walker,TE,92.5,7
-Dwayne Allen,TE,92.1,8
-Jordan Cameron,TE,89.2,9
-Zach Ertz,TE,86.6,10
-Coby Fleener,TE,85.4,11
-Antonio Gates,TE,83.5,12
-Kyle Rudolph,TE,82.2,13
-Owen Daniels,TE,81.5,14
-Heath Miller,TE,81,15
-Julius Thomas,TE,79.4,16
-Jordan Reed,TE,79.4,17
-Tyler Eifert,TE,74.4,18
-Vernon Davis,TE,74.2,19
-Jared Cook,TE,74.1,20
-Charles Clay,TE,73.3,21
-Josh Hill,TE,69.1,22
-Larry Donnell,TE,68.6,23
-Austin Seferian-Jenkins,TE,68.1,24
-Richard Rodgers,TE,64.6,25
-Mychal Rivera,TE,62.8,26
-Eric Ebron,TE,61.9,27
-Ladarius Green,TE,59.5,28
-Benjamin Watson,TE,59,29
-Jeff Cumberland,TE,56.3,30
-Brent Celek,TE,51.7,31
-Maxx Williams,TE,49.9,32
-Jacob Tamme,TE,48.6,33
-Crockett Gillmore,TE,48.5,34
-Garrett Graham,TE,48.3,35
-Clive Walford,TE,47,36
-Lance Kendricks,TE,45.4,37
-Andrew Quarless,TE,43.7,38
-Scott Chandler,TE,42.9,39
-Gavin Escobar,TE,42,40
-Virgil Green,TE,41.7,41
-Marcedes Lewis,TE,37.4,42
-James O'Shaughnessy,TE,37.2,43
-Rob Housler,TE,36.3,44
-Luke Willson,TE,36.3,45
-Darren Fells,TE,36.1,46
-Rhett Ellison,TE,35.8,47
-Craig Stevens,TE,34.6,48
-Matt Spaeth,TE,33.9,49
-Dion Sims,TE,33.1,50
-Levine Toilolo,TE,33,51
-Ryan Hewitt,TE,31,52
-Gary Barnidge,TE,30.8,53
-Derek Carrier,TE,30.7,54
-Ed Dickson,TE,30,55
-Daniel Fells,TE,30,56
-Jermaine Gresham,TE,30,57
-Troy Niklas,TE,29.7,58
-Chris Gragg,TE,26.5,59
-Anthony Fasano,TE,25.7,60
-C.J. Fiedorowicz,TE,24.8,61
-James Casey,TE,24.3,62
-Brandon Myers,TE,23.1,63
-Kellen Davis,TE,22.6,64
-Brandon Pettigrew,TE,20.5,65
-Dennis Pitta,TE,19.5,66
-Jim Dray,TE,18.6,67
-Lee Smith,TE,18.6,68
-Trey Burton,TE,18.3,69
-Tyler Kroft,TE,18.1,70
-Demetrius Harris,TE,17.2,71
-Tim Wright,TE,17.1,72
-MyCole Pruitt,TE,16.1,73
-MarQueis Gray,TE,13.8,74
-Vance McDonald,TE,11.9,75
-Clay Harbor,TE,11.6,76
-Cameron Brate,TE,10.6,77
-Garrett Celek,TE,10.5,78
-Ryan Griffin,TE,10.4,79
-David Johnson,TE,10.4,80
-Nic Jacobs,TE,10.3,81
-Chase Ford,TE,9.8,82
-Cooper Helfet,TE,9.4,83
-Zach Miller,TE,8.2,84
-Michael Hoomanawanui,TE,8,85
-Phillip Supernaw,TE,7.2,86
-Brandon Williams,TE,5.7,87
-Luke Stocker,TE,5.6,88
-Jack Doyle,TE,5.6,89
-James Hanna,TE,5.3,90
-Cory Harkey,TE,5.2,91
-Jordan Thompson,TE,4.9,92
-Richard Gordon,TE,2.7,93
-Joseph Fauria,TE,0,94
-Stephen Gostkowski,K,139.9,1
-Mason Crosby,K,130.8,2
-Adam Vinatieri,K,129.6,3
-Cody Parkey,K,129.6,4
-Justin Tucker,K,128.3,5
-Steven Hauschka,K,127.3,6
-Dan Bailey,K,123.3,7
-Dan Carpenter,K,120.6,8
-Brandon McManus,K,120.5,9
-Chandler Catanzaro,K,119.3,10
-Matt Bryant,K,118.5,11
-Josh Scobee,K,118.5,12
-Graham Gano,K,115.1,13
-Nick Folk,K,114.4,14
-Randy Bullock,K,113.5,15
-Cairo Santos,K,112.9,16
-Andrew Franks,K,112.6,17
-Josh Brown,K,112.2,18
-Josh Lambo,K,111.5,19
-Phil Dawson,K,110.4,20
-Blair Walsh,K,110.1,21
-Greg Zuerlein,K,109.8,22
-Mike Nugent,K,108.6,23
-Matt Prater,K,107.3,24
-Travis Coons,K,106.5,25
-Zach Hocker,K,105.9,26
-Kai Forbath,K,104.3,27
-Sebastian Janikowski,K,100.7,28
-Robbie Gould,K,99.3,29
-Jason Myers,K,97.6,30
-Kyle Brindza,K,96.3,31
-Ryan Succop,K,93.5,32
-Seahawks,DST,187,1
-Bills,DST,137,2
-Texans,DST,132,3
-Rams,DST,124,4
-Jets,DST,111,5
-Broncos,DST,113,6
-Ravens,DST,109,7
-Dolphins,DST,117,8
-Cardinals,DST,101,9
-Lions,DST,102,10
-Vikings,DST,97,11
-Patriots,DST,126,12
-Packers,DST,108,13
-Eagles,DST,114,14
-Panthers,DST,104,15
-Browns,DST,96,16
-49ers,DST,100,17
-Chiefs,DST,80,18
-Bengals,DST,102,19
-Colts,DST,101,20
-Buccaneers,DST,105,21
-Giants,DST,101,22
-Falcons,DST,81,23
-Cowboys,DST,82,24
-Steelers,DST,78,25
-Jaguars,DST,79,26
-Saints,DST,73,27
-Titans,DST,87,28
-Bears,DST,92,29
-Chargers,DST,65,30
-Redskins,DST,67,31
-Raiders,DST,47,32

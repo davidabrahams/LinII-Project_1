@@ -139,13 +139,15 @@ class DraftState(object):
         """This function returns the players on an owner's team at the current
         draf state.
         """
-        players = []
+        players = empty_state()
         for pick in owner.picks:
             if pick <= len(self.taken):
-                players.append(self.taken[pick - 1])
+                p = self.taken[pick - 1]
+                players[p.position].append(p)
+        return players
 
 def empty_state():
-    return {'qbs': [], 'rbs': [], 'wrs': [], 'tes': [], 'dsts': [], 'ks': []}
+    return {'qb': [], 'rb': [], 'wr': [], 'te': [], 'dst': [], 'k': []}
 
 
 
