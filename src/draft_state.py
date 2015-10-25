@@ -58,7 +58,7 @@ class DraftState(object):
                     pick = self.round_length - i + 1 + self.round_length * j
                 picks.append(pick)
 
-            owner = Owner(picks)
+            owner = Owner(picks, name=str(i))
             owners.append(owner)
         return owners
 
@@ -119,14 +119,6 @@ class DraftState(object):
     #     best_pick = picks[0]
     #     best_score = float('-inf')
 
-
-    def eval_state():
-        # TODO:
-        # get the owner who just picked (I think)
-        # evaluate his team
-        # return it
-        pass
-
     def whos_pick(self):
         """
         this function returns the owner who's pick it currently is
@@ -148,6 +140,8 @@ class DraftState(object):
 
 def empty_state():
     return {'qb': [], 'rb': [], 'wr': [], 'te': [], 'dst': [], 'k': []}
+
+
 
 
 
