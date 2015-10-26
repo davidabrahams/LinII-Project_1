@@ -92,6 +92,7 @@ class DraftState(object):
         # create copies
         avail_dict = dict(self.available)
         taken = list(self.taken)
+        owners = list(self.owners)
 
         for player_list in avail_dict.itervalues():
 
@@ -106,7 +107,7 @@ class DraftState(object):
         next_round = (self.pick_number - 1) / 10 + 1
 
         return DraftState(avail_dict,
-                          next_round, next_pick, taken)
+                          next_round, next_pick, taken, owners)
 
 
     def is_draft_over(self):

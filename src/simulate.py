@@ -20,7 +20,7 @@ def get_replacement_lvls(player_dict, replacements):
         res[k] = player_dict[k][replacements[k]].value
     return res
 
-def main():
+def get_starting_state(baseline, owner_nums, strats):
     df = load_csv(CSV_FILENAME)
     starting_players = draft_state.empty_state()
 
@@ -32,10 +32,23 @@ def main():
         player = Player(pos, val, identifier)
         starting_players[key].append(player)
 
-    replacement_vals = get_replacement_lvls(starting_players, replacement_lvls)
-
     start_draft_state = DraftState(starting_players)
+
+    for i, o in enumerate(start_draft_state.owners):
+        print 'setting strategy for owner ' + str(i)
+        o.set_strat(baseline, i)
+
+    for n, s in zip(owner_nums, strats):
+        start_draft_state.owners[n].set_strat(s, n)
+
+    return start_draft_state
+
+
+def simulate_draft(start_draft_state):
+
     current_state = start_draft_state
+    starting_players = start_draft_state.available
+    replacement_vals = get_replacement_lvls(starting_players, replacement_lvls)
 
     while not current_state.is_draft_over():
         current_owner = current_state.whos_pick()
@@ -43,12 +56,13 @@ def main():
         print "At pick number: " + str(current_state.pick_number) + " " + str(pick) + " was selected."
         current_state = current_state.next_state(pick)
 
-    print_teams(current_state)
+    return current_state
 
 def print_teams(end_state):
     owners = end_state.owners
-    positions = ['qb', 'rb', 'wr', 'te', 'dst', 'k']
-    df = pd.DataFrame(index=['qb1', 'rb1', 'rb2', 'wr1', 'wr2', 'wr3', 'te1', 'dst', 'k', 'qb2', 'rb3', 'rb4', 'rb5','wr4', 'wr5', 'te2', 'score'])
+    df = pd.DataFrame(index=['qb1', 'rb1', 'rb2', 'wr1', 'wr2', 'wr3', 'te1',
+                             'dst', 'k', 'qb2', 'rb3', 'rb4', 'rb5','wr4',
+                             'wr5', 'te2', 'score'])
     for o in owners:
         team = end_state.get_team(o)
         o_team = []
@@ -75,7 +89,10 @@ def print_teams(end_state):
     df.to_csv(OUTPUT_FN)
 
 
-
+def main():
+    start_state = get_starting_state('control', [0, 2, 4, 6, 8], ['control_weighted', 'control_weighted', 'control_weighted', 'control_weighted', 'control_weighted'])
+    drafted = simulate_draft(start_state)
+    print_teams(drafted)
 
 if __name__ == '__main__':
     main()

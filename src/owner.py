@@ -17,6 +17,10 @@ class Owner(object):
         if self.name is None:
             self.name = self.strategy
 
+    def set_strat(self, strat, owner_num):
+        self.name = strat + " " + str(owner_num)
+        self.strategy = strat
+
     def __str__(self):
         return "Owner with picks: " + str(self.picks)
 
@@ -52,12 +56,12 @@ class Owner(object):
         if self.strategy == 'control':
             choices = []
             for position, players in available.iteritems():
-                if len(players) > 0:
+                if (len(players) > 0 and len(my_team[position])
+                    < self.position_maxes[position]):
                     player = players[0]
                     choices.append(player)
 
             player_to_pick = random.choice(choices)
-
 
         if self.strategy == 'control_weighted':
             choices = []
